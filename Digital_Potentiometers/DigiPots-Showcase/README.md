@@ -1,1 +1,1 @@
-VSCode/platformio prohect folder
+VSCode/platformio project folder
