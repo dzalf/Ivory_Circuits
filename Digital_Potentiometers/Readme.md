@@ -6,5 +6,5 @@ The _DigiPots-Showcase_ folder is a VSCode + platformio project container that i
 
 This is how the breadboard with this prototype looks like:
 
-![alt_text](https://github.com/dzalf/Ivory_Circuits/blob/master/Digital_Potentiometers/DigiPots-Showcase/breadboard.jpg)
+<img src = "https://github.com/dzalf/Ivory_Circuits/blob/master/Digital_Potentiometers/DigiPots-Showcase/breadboard.jpg" width="500" >
 
