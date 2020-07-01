@@ -18,7 +18,7 @@
 #define CLEAR 0
 #define DEBUG true
 
-// Measured values
+// Mead values
 #define TPL0102_RES 95700.0
 #define MCP4011_RES 49220.0
 #define MCP4013_RES 49690.0
@@ -127,6 +127,12 @@ void setup() {
     delay(1500);
 
     Serial.println(F("Initialization  messages: \n\n"));
+
+    Serial.print("Configuring MCP40xx devices >> ");
+    Serial.print(digiPots.MCP4011.DIGIPOT_LABELS[MCP40xx::MCP4011]);
+    Serial.print(F(", "));
+    Serial.println(digiPots.MCP4011.DIGIPOT_LABELS[MCP40xx::MCP4013]);
+    Serial.print("\n\n");
     // Initialize the push buttons: encoder and channel select
     buttonsSetup();
     // Setup the connections and values from the three digipots
@@ -606,3 +612,54 @@ void displayResistanceValues() {
     Serial.print(" >> ");
     Serial.println(values[potIndex], 1);
 }
+
+/*    DEPRECATED */
+/*
+void selectiveIncrement() {
+    //
+    if (potIndex == 0) {
+        digiPots.tpl.setTap(chanPtr, tapPtr);
+        values[0] = digiPots.tpl.readValue(chanPtr);
+
+        Serial.print("Retrieved value >> ");
+        Serial.println(digiPots.tpl.taps(chanPtr));
+
+    } else if (potIndex == 1) {
+        digiPots.MCP4011.setTap(tapPtr);  // .inc()
+        values[1] = digiPots.MCP4011.readValue();
+        Serial.print("Retrieved value >> ");
+        Serial.println(digiPots.MCP4011.taps());
+
+    } else if (potIndex == 2) {
+        digiPots.MCP4013.setTap(tapPtr);
+        values[2] = digiPots.MCP4013.readValue();
+        Serial.print("Retrieved value >> ");
+        Serial.println(digiPots.MCP4013.taps());
+    }
+}
+
+void selectiveDecrement() {
+    if (potIndex == 0) {
+        digiPots.tpl.setTap(chanPtr, tapPtr);  // .dec()
+        values[0] = digiPots.tpl.readValue(chanPtr);
+
+    } else if (potIndex == 1) {
+        digiPots.MCP4011.setTap(tapPtr);  // .dec();
+        values[1] = digiPots.MCP4011.readValue();
+
+    } else if (potIndex == 2) {
+        digiPots.MCP4013.setTap(tapPtr);  // .dec()
+        values[2] = digiPots.MCP4013.readValue();
+    }
+
+    disp.setDrawColor(1);
+    disp.setFont(u8g2_font_4x6_mr);
+    disp.drawStr(110, FIRST_ROW, "Dec");
+    disp.print(tapPtr);
+
+    Serial.print("Value ");
+    Serial.print(digiPotLabels[potIndex]);
+    Serial.print(" >> ");
+    Serial.println(values[potIndex]);
+}
+*/
