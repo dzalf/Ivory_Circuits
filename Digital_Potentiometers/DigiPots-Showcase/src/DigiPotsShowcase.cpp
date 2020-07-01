@@ -18,7 +18,7 @@
 #define CLEAR 0
 #define DEBUG true
 
-// Mead values
+// Measured values
 #define TPL0102_RES 95700.0
 #define MCP4011_RES 49220.0
 #define MCP4013_RES 49690.0
