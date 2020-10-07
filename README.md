@@ -1,4 +1,5 @@
-# IvoryCircuits
+# IvoryCircuits_Welcome to our product codes
+
 Public repository for the Ivory Circuits shop from Tindie
 
 
